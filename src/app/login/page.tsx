@@ -5,7 +5,7 @@ import React, { useState, FormEvent } from "react";
 import Image from "next/image";
 import axios from "axios";
 
-export default function loginPage() {
+export default function LoginPage() {
     const router = useRouter()
     const [user, setUser] = useState({
         username: "",
@@ -17,10 +17,12 @@ export default function loginPage() {
 
 
     const onLogin = async (e: FormEvent) => {
+
         e.preventDefault();
-        setErrorMessage('')
+        setErrorMessage('');
         try {
-            setLoading(true)
+            setLoading(true);
+
             const response = await axios.post(`/api/users/login`, user)
 
             if(response.status === 200) router.push(`/profile/${response.data.id}`)
@@ -39,8 +41,8 @@ export default function loginPage() {
             <Image
                 src="/background-image.jpg"
                 alt="Background Image"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{objectFit:"cover"}}
                 quality={100}
                 className="pointer-events-none"
             />
@@ -59,8 +61,8 @@ export default function loginPage() {
                             <Image
                                 src="/login.png"
                                 alt="Login Image"
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{objectFit:"cover"}}
                                 className="h-full"
                             />
                         </div>
