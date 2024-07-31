@@ -35,6 +35,7 @@ User Model with sample data - First Name, Last Name, Username, Password, Email, 
 1. Simple registration with user data.
 
 2. On successful registration redirects to Login Page.
+![image](https://github.com/user-attachments/assets/bb060c2b-5cef-425c-aa3f-757f636d51a3)
 
 ## Testing using Jest
 
