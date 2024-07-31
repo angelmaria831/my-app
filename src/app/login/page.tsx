@@ -29,7 +29,7 @@ export default function LoginPage() {
             else throw Error(`Login Failed : ${response.data.error}`)
             
         } catch (error: any) {
-            setErrorMessage(error.response?.data?.error || `Login Failed`)
+            setErrorMessage(` Login Failed : ${error.response.data.error} `)
         } finally {
             setLoading(false)
         }

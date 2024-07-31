@@ -48,7 +48,7 @@ describe('LoginPage', () => {
         fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
 
         await waitFor(() => {
-            expect(screen.getByText('User dont exists')).toBeInTheDocument();
+            expect(screen.getByText('Login Failed : User dont exists')).toBeInTheDocument();
         });
     });
 
@@ -64,7 +64,7 @@ describe('LoginPage', () => {
         fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
 
         await waitFor(() => {
-            expect(screen.getByText('Invalid Password')).toBeInTheDocument();
+            expect(screen.getByText('Login Failed : Invalid Password')).toBeInTheDocument();
         });
     });
 
