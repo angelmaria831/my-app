@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## NextJS - My-App with React, Tailwind, TS, Jest
 
-## Getting Started
+To start the application :
 
-First, run the development server:
-
-```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## DB - Mongo Atlas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+User Model with sample data - First Name, Last Name, Username, Password, Email, isAdmin(default:false)
 
-## Learn More
+## Login
 
-To learn more about Next.js, take a look at the following resources:
+Login to the application using "username" and "password" as specified.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Features : 
+1. Takes a username and a password and on submission sends them both to an API endpoint called /login
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. The API endpoint should accept POST requests with username and password in the body. When the API endpoint gets "username" as username and "password" as password then it returns a 200 response with a success and when it is anything else - it should return an error stating that the authentication failed.
 
-## Deploy on Vercel
+3. After successful login - user should be redirected to a user page where it would show some basic info for that user fetch from DB
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Creates token (expiry :1day) data with _id, username and email and stored in cookies 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Profile
+
+1. On success Login, user is redirected to Profile Page with dummy user data.
+
+2. Showing Loading spinner until data is fetched from DB
+
+3. Logout button to reset the token. Redirects to Login Page.
+
+## Signup
+
+1. Simple registration with user data.
+
+2. On successful registration redirects to Login Page.
+
+## Testing using Jest
+
+1. Handled testcases for Login and Profile Page
+
+
